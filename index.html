@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkinyMC – Nowoczesne skiny Minecraft + AI</title>
+  <title>SkinyMC – Nowoczesne skiny Minecraft</title>
   <script src="https://cdn.jsdelivr.net/npm/skinview3d@3.0.1/bundles/skinview3d.bundle.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -82,7 +82,6 @@
       color: #fff;
       margin-left: 10px;
     }
-    .btn-secondary:hover { background: #3f3f46; }
     .btn-sm {
       padding: 9px 14px;
       font-size: 0.85rem;
@@ -140,53 +139,6 @@
       margin-bottom: 12px;
     }
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-    .feature {
-      background: #18181b;
-      border: 1px solid #27272a;
-      border-radius: 14px;
-      padding: 24px;
-    }
-    .feature-icon { font-size: 1.7rem; margin-bottom: 10px; }
-    .feature h3 { font-size: 1.05rem; margin-bottom: 6px; }
-    .feature p { color: #a1a1aa; font-size: 0.92rem; }
-
-    .ai-box {
-      background: #18181b;
-      border: 1px solid #27272a;
-      border-radius: 16px;
-      padding: 28px;
-      max-width: 560px;
-      margin: 0 auto;
-    }
-    .ai-box label {
-      display: block;
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-      color: #a1a1aa;
-    }
-    .ai-box textarea {
-      width: 100%;
-      height: 90px;
-      background: #0f0f13;
-      border: 1px solid #3f3f46;
-      border-radius: 10px;
-      padding: 12px;
-      color: #fff;
-      font-size: 0.95rem;
-      resize: vertical;
-      margin-bottom: 14px;
-    }
-    .ai-box textarea:focus {
-      outline: none;
-      border-color: #22c55e;
-    }
-
     .cta {
       text-align: center;
       background: linear-gradient(135deg, #14532d, #052e16);
@@ -203,16 +155,6 @@
       color: #71717a;
       font-size: 0.88rem;
     }
-
-    .badge {
-      display: inline-block;
-      background: #22c55e22;
-      color: #22c55e;
-      font-size: 0.75rem;
-      padding: 3px 8px;
-      border-radius: 6px;
-      margin-bottom: 12px;
-    }
   </style>
 </head>
 <body>
@@ -221,7 +163,6 @@
       <a href="/" class="logo">Skiny<span>MC</span></a>
       <nav>
         <a href="#skiny">Skiny</a>
-        <a href="#ai">AI Generator</a>
         <a href="#dodaj">Dodaj skin</a>
       </nav>
     </div>
@@ -230,55 +171,18 @@
   <main>
     <section class="hero">
       <div class="container">
-        <h1>Nowoczesne <span>skiny Minecraft</span><br>z AI</h1>
-        <p>Przeglądaj skiny, obracaj je w 3D i pobieraj jednym kliknięciem.</p>
-        <div>
-          <a href="#skiny" class="btn btn-primary">Przeglądaj skiny</a>
-          <a href="#ai" class="btn btn-secondary">Generuj AI</a>
-        </div>
+        <h1>Nowoczesne <span>skiny Minecraft</span></h1>
+        <p>Przeciągnij myszką, żeby obrócić skina. Kliknij Pobierz, żeby ściągnąć plik PNG.</p>
+        <a href="#skiny" class="btn btn-primary">Przeglądaj skiny</a>
       </div>
     </section>
 
     <section id="skiny">
       <div class="container">
         <h2 class="section-title">Popularne skiny</h2>
-        <p class="section-desc">Przeciągnij myszką, żeby obrócić skina • Kliknij Pobierz</p>
+        <p class="section-desc">Przeciągnij myszką po modelu, żeby go obrócić</p>
         
-        <div class="skins-grid" id="skinsGrid">
-          <!-- Skiny będą generowane przez JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <section id="ai">
-      <div class="container">
-        <h2 class="section-title">Generuj skin AI</h2>
-        <p class="section-desc">Opisz postać, a AI stworzy gotowy skin 64×64</p>
-        
-        <div class="features">
-          <div class="feature">
-            <div class="feature-icon">✨</div>
-            <h3>Tekst → Skin</h3>
-            <p>Wpisz opis i otrzymaj gotowy plik PNG do Minecrafta.</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon">🖼️</div>
-            <h3>Podgląd 3D</h3>
-            <p>Zobacz skina z każdej strony przed pobraniem.</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon">⚡</div>
-            <h3>Szybko</h3>
-            <p>Generacja w około minutę. Bez rysowania.</p>
-          </div>
-        </div>
-
-        <div class="ai-box">
-          <div class="badge">Wkrótce dostępne</div>
-          <label>Opisz swojego skina</label>
-          <textarea placeholder="np. złoty rycerz z czerwonym płaszczem, niebieskie oczy, hełm z rogami..."></textarea>
-          <button class="btn btn-primary" style="width:100%" onclick="alert('AI Generator będzie dostępny wkrótce!')">Generuj skin</button>
-        </div>
+        <div class="skins-grid" id="skinsGrid"></div>
       </div>
     </section>
 
@@ -286,8 +190,8 @@
       <div class="container">
         <div class="cta">
           <h2>Dodaj swój skin</h2>
-          <p>Podziel się swoją twórczością z innymi graczami</p>
-          <button class="btn btn-primary" onclick="alert('Upload i edytor skinów dodamy w następnym kroku!')">Dodaj skin</button>
+          <p>Wkrótce będziesz mógł dodawać i edytować własne skiny</p>
+          <button class="btn btn-primary" onclick="alert('Edytor i upload dodamy w następnym kroku!')">Dodaj skin</button>
         </div>
       </div>
     </section>
@@ -300,6 +204,7 @@
   </footer>
 
   <script>
+    // Tylko sprawdzone, działające skiny
     const skins = [
       {
         name: "Classic Steve",
@@ -324,18 +229,6 @@
         category: "Mojang",
         uuid: "853c80ef-3c37-49bb-aa55-35016a6b1d1c",
         fileName: "jeb.png"
-      },
-      {
-        name: "Dinnerbone",
-        category: "Mojang",
-        uuid: "61699b2e-d327-4a01-9f1e-0ea8c3f06bc6",
-        fileName: "dinnerbone.png"
-      },
-      {
-        name: "Herobrine",
-        category: "Myth",
-        uuid: "f5c8e9d2-4a1b-4c3d-9e8f-7a6b5c4d3e2f",
-        fileName: "herobrine.png"
       }
     ];
 
@@ -358,26 +251,28 @@
       `;
       grid.appendChild(card);
 
-      // Tworzenie obracanego podglądu 3D
-      const container = document.getElementById(`preview-${index}`);
-      const viewer = new skinview3d.SkinViewer({
-        canvas: document.createElement('canvas'),
-        width: 200,
-        height: 240,
-        skin: `https://crafatar.com/skins/${skin.uuid}`
-      });
-      
-      container.appendChild(viewer.canvas);
-      
-      // Auto obracanie + możliwość ręcznego obracania
-      viewer.autoRotate = true;
-      viewer.autoRotateSpeed = 0.6;
-      
-      // Kontrola myszką
-      const control = skinview3d.createOrbitControls(viewer);
-      control.enableRotate = true;
-      control.enableZoom = false;
-      control.enablePan = false;
+      setTimeout(() => {
+        try {
+          const container = document.getElementById(`preview-${index}`);
+          const viewer = new skinview3d.SkinViewer({
+            canvas: document.createElement('canvas'),
+            width: 200,
+            height: 240,
+            skin: `https://crafatar.com/skins/${skin.uuid}`
+          });
+
+          container.appendChild(viewer.canvas);
+          viewer.autoRotate = true;
+          viewer.autoRotateSpeed = 0.5;
+
+          const control = skinview3d.createOrbitControls(viewer);
+          control.enableRotate = true;
+          control.enableZoom = false;
+          control.enablePan = false;
+        } catch (e) {
+          console.log('Błąd ładowania skina:', skin.name);
+        }
+      }, index * 300); // małe opóźnienie żeby nie przeciążać
     });
   </script>
 </body>
