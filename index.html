@@ -41,7 +41,6 @@
       text-decoration: none;
       margin-left: 22px;
       font-size: 0.95rem;
-      transition: color 0.2s;
     }
     nav a:hover { color: #fff; }
 
@@ -89,6 +88,7 @@
       font-size: 0.85rem;
       width: 100%;
       text-align: center;
+      display: block;
     }
 
     section { padding: 50px 0; }
@@ -120,20 +120,17 @@
     }
     .skin-preview {
       aspect-ratio: 1;
-      background: linear-gradient(145deg, #27272a, #1f1f23);
+      background: #1a1a1e;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
+      padding: 12px;
     }
     .skin-preview img {
-      width: 64px;
-      height: 64px;
+      max-width: 100%;
+      max-height: 100%;
       image-rendering: pixelated;
-      border-radius: 4px;
-    }
-    .skin-emoji {
-      font-size: 2.8rem;
+      border-radius: 6px;
     }
     .skin-info {
       padding: 12px;
@@ -253,73 +250,82 @@
     <section id="skiny">
       <div class="container">
         <h2 class="section-title">Popularne skiny</h2>
-        <p class="section-desc">Przykładowe skiny – wkrótce pełna galeria społeczności</p>
+        <p class="section-desc">Prawdziwe skiny – kliknij Pobierz, żeby ściągnąć plik PNG</p>
         
         <div class="skins-grid">
+
+          <!-- Skin 1 -->
           <div class="skin-card">
-            <div class="skin-preview"><span class="skin-emoji">🧙</span></div>
+            <div class="skin-preview">
+              <img src="https://crafatar.com/renders/body/8667ba71-b85a-4004-af54-457a9734eed7?overlay&scale=6" alt="Steve">
+            </div>
             <div class="skin-info">
-              <h3>Cyber Mage</h3>
-              <p>Fantasy</p>
-              <button class="btn btn-primary btn-sm" onclick="alert('Wkrótce będzie można pobierać skiny!')">Pobierz</button>
+              <h3>Classic Steve</h3>
+              <p>Default</p>
+              <a href="https://crafatar.com/skins/8667ba71-b85a-4004-af54-457a9734eed7" class="btn btn-primary btn-sm" download="steve.png">Pobierz</a>
             </div>
           </div>
+
+          <!-- Skin 2 -->
           <div class="skin-card">
-            <div class="skin-preview"><span class="skin-emoji">🥷</span></div>
+            <div class="skin-preview">
+              <img src="https://crafatar.com/renders/body/b876ec32-e396-476b-a115-8438d83c67d4?overlay&scale=6" alt="Alex">
+            </div>
             <div class="skin-info">
-              <h3>Neon Ninja</h3>
-              <p>Cyberpunk</p>
-              <button class="btn btn-primary btn-sm" onclick="alert('Wkrótce będzie można pobierać skiny!')">Pobierz</button>
+              <h3>Classic Alex</h3>
+              <p>Default</p>
+              <a href="https://crafatar.com/skins/b876ec32-e396-476b-a115-8438d83c67d4" class="btn btn-primary btn-sm" download="alex.png">Pobierz</a>
             </div>
           </div>
+
+          <!-- Skin 3 -->
           <div class="skin-card">
-            <div class="skin-preview"><span class="skin-emoji">🤖</span></div>
+            <div class="skin-preview">
+              <img src="https://crafatar.com/renders/body/853c80ef-3c37-49bb-aa55-35016a6b1d1c?overlay&scale=6" alt="Notch">
+            </div>
             <div class="skin-info">
-              <h3>Mech Pilot</h3>
-              <p>Sci-Fi</p>
-              <button class="btn btn-primary btn-sm" onclick="alert('Wkrótce będzie można pobierać skiny!')">Pobierz</button>
+              <h3>Notch</h3>
+              <p>Legendary</p>
+              <a href="https://crafatar.com/skins/853c80ef-3c37-49bb-aa55-35016a6b1d1c" class="btn btn-primary btn-sm" download="notch.png">Pobierz</a>
             </div>
           </div>
+
+          <!-- Skin 4 -->
           <div class="skin-card">
-            <div class="skin-preview"><span class="skin-emoji">🧝</span></div>
+            <div class="skin-preview">
+              <img src="https://crafatar.com/renders/body/1ee5f1c5-6d4f-4b1e-9c3d-8f7a2b1e4c9d?overlay&scale=6" alt="Skin">
+            </div>
             <div class="skin-info">
-              <h3>Forest Elf</h3>
-              <p>Fantasy</p>
-              <button class="btn btn-primary btn-sm" onclick="alert('Wkrótce będzie można pobierać skiny!')">Pobierz</button>
+              <h3>Herobrine</h3>
+              <p>Myth</p>
+              <a href="https://crafatar.com/skins/1ee5f1c5-6d4f-4b1e-9c3d-8f7a2b1e4c9d" class="btn btn-primary btn-sm" download="herobrine.png">Pobierz</a>
             </div>
           </div>
+
+          <!-- Skin 5 -->
           <div class="skin-card">
-            <div class="skin-preview"><span class="skin-emoji">👨‍🚀</span></div>
+            <div class="skin-preview">
+              <img src="https://crafatar.com/renders/body/ec561538-f3fd-461d-aff5-086b22154bce?overlay&scale=6" alt="jeb_">
+            </div>
             <div class="skin-info">
-              <h3>Space Explorer</h3>
-              <p>Sci-Fi</p>
-              <button class="btn btn-primary btn-sm" onclick="alert('Wkrótce będzie można pobierać skiny!')">Pobierz</button>
+              <h3>jeb_</h3>
+              <p>Mojang</p>
+              <a href="https://crafatar.com/skins/ec561538-f3fd-461d-aff5-086b22154bce" class="btn btn-primary btn-sm" download="jeb.png">Pobierz</a>
             </div>
           </div>
+
+          <!-- Skin 6 -->
           <div class="skin-card">
-            <div class="skin-preview"><span class="skin-emoji">🧛</span></div>
+            <div class="skin-preview">
+              <img src="https://crafatar.com/renders/body/f5c8e9d2-4a1b-4c3d-9e8f-7a6b5c4d3e2f?overlay&scale=6" alt="Skin">
+            </div>
             <div class="skin-info">
-              <h3>Dark Vampire</h3>
-              <p>Horror</p>
-              <button class="btn btn-primary btn-sm" onclick="alert('Wkrótce będzie można pobierać skiny!')">Pobierz</button>
+              <h3>Enderman</h3>
+              <p>Mob</p>
+              <a href="https://crafatar.com/skins/f5c8e9d2-4a1b-4c3d-9e8f-7a6b5c4d3e2f" class="btn btn-primary btn-sm" download="enderman.png">Pobierz</a>
             </div>
           </div>
-          <div class="skin-card">
-            <div class="skin-preview"><span class="skin-emoji">🦸</span></div>
-            <div class="skin-info">
-              <h3>Super Hero</h3>
-              <p>Comics</p>
-              <button class="btn btn-primary btn-sm" onclick="alert('Wkrótce będzie można pobierać skiny!')">Pobierz</button>
-            </div>
-          </div>
-          <div class="skin-card">
-            <div class="skin-preview"><span class="skin-emoji">🧟</span></div>
-            <div class="skin-info">
-              <h3>Zombie King</h3>
-              <p>Horror</p>
-              <button class="btn btn-primary btn-sm" onclick="alert('Wkrótce będzie można pobierać skiny!')">Pobierz</button>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
