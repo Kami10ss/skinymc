@@ -15,14 +15,13 @@
     }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
     
-    /* Header */
     header {
-      padding: 20px 0;
+      padding: 18px 0;
       border-bottom: 1px solid #27272a;
       position: sticky;
       top: 0;
       background: rgba(15, 15, 19, 0.95);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       z-index: 100;
     }
     .header-inner {
@@ -31,7 +30,7 @@
       align-items: center;
     }
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-weight: 700;
       color: #fff;
       text-decoration: none;
@@ -40,37 +39,39 @@
     nav a {
       color: #a1a1aa;
       text-decoration: none;
-      margin-left: 24px;
+      margin-left: 22px;
       font-size: 0.95rem;
+      transition: color 0.2s;
     }
     nav a:hover { color: #fff; }
 
-    /* Hero */
     .hero {
-      padding: 80px 0 60px;
+      padding: 70px 0 50px;
       text-align: center;
     }
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-size: clamp(2rem, 5vw, 3rem);
       font-weight: 800;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       line-height: 1.2;
     }
     .hero h1 span { color: #22c55e; }
     .hero p {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: #a1a1aa;
-      max-width: 560px;
-      margin: 0 auto 32px;
+      max-width: 520px;
+      margin: 0 auto 30px;
     }
     .btn {
       display: inline-block;
-      padding: 14px 28px;
+      padding: 12px 24px;
       border-radius: 10px;
       font-weight: 600;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 0.95rem;
       transition: all 0.2s;
+      border: none;
+      cursor: pointer;
     }
     .btn-primary {
       background: #22c55e;
@@ -80,27 +81,31 @@
     .btn-secondary {
       background: #27272a;
       color: #fff;
-      margin-left: 12px;
+      margin-left: 10px;
     }
     .btn-secondary:hover { background: #3f3f46; }
+    .btn-sm {
+      padding: 8px 14px;
+      font-size: 0.85rem;
+      width: 100%;
+      text-align: center;
+    }
 
-    /* Section */
-    section { padding: 60px 0; }
+    section { padding: 50px 0; }
     .section-title {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .section-desc {
       color: #a1a1aa;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
-    /* Grid */
     .skins-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 18px;
     }
     .skin-card {
       background: #18181b;
@@ -115,73 +120,109 @@
     }
     .skin-preview {
       aspect-ratio: 1;
-      background: #27272a;
+      background: linear-gradient(145deg, #27272a, #1f1f23);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 3rem;
+      position: relative;
+    }
+    .skin-preview img {
+      width: 64px;
+      height: 64px;
+      image-rendering: pixelated;
+      border-radius: 4px;
+    }
+    .skin-emoji {
+      font-size: 2.8rem;
     }
     .skin-info {
-      padding: 14px;
+      padding: 12px;
     }
     .skin-info h3 {
-      font-size: 0.95rem;
-      margin-bottom: 4px;
+      font-size: 0.92rem;
+      margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     .skin-info p {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: #71717a;
+      margin-bottom: 10px;
     }
 
-    /* Features */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
     }
     .feature {
       background: #18181b;
       border: 1px solid #27272a;
       border-radius: 14px;
+      padding: 24px;
+    }
+    .feature-icon { font-size: 1.7rem; margin-bottom: 10px; }
+    .feature h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .feature p { color: #a1a1aa; font-size: 0.92rem; }
+
+    .ai-box {
+      background: #18181b;
+      border: 1px solid #27272a;
+      border-radius: 16px;
       padding: 28px;
+      max-width: 560px;
+      margin: 0 auto;
     }
-    .feature-icon {
-      font-size: 1.8rem;
-      margin-bottom: 12px;
-    }
-    .feature h3 {
-      font-size: 1.1rem;
+    .ai-box label {
+      display: block;
+      font-size: 0.9rem;
       margin-bottom: 8px;
-    }
-    .feature p {
       color: #a1a1aa;
+    }
+    .ai-box textarea {
+      width: 100%;
+      height: 90px;
+      background: #0f0f13;
+      border: 1px solid #3f3f46;
+      border-radius: 10px;
+      padding: 12px;
+      color: #fff;
       font-size: 0.95rem;
+      resize: vertical;
+      margin-bottom: 14px;
+    }
+    .ai-box textarea:focus {
+      outline: none;
+      border-color: #22c55e;
     }
 
-    /* CTA */
     .cta {
       text-align: center;
-      background: linear-gradient(135deg, #14532d 0%, #052e16 100%);
-      border-radius: 20px;
-      padding: 50px 30px;
-      margin: 40px 0;
+      background: linear-gradient(135deg, #14532d, #052e16);
+      border-radius: 18px;
+      padding: 40px 24px;
     }
-    .cta h2 {
-      font-size: 1.8rem;
-      margin-bottom: 12px;
-    }
-    .cta p {
-      color: #bbf7d0;
-      margin-bottom: 24px;
-    }
+    .cta h2 { font-size: 1.6rem; margin-bottom: 8px; }
+    .cta p { color: #bbf7d0; margin-bottom: 20px; }
 
-    /* Footer */
     footer {
       border-top: 1px solid #27272a;
-      padding: 30px 0;
+      padding: 28px 0;
       text-align: center;
       color: #71717a;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #22c55e22;
+      color: #22c55e;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-bottom: 12px;
     }
   </style>
 </head>
@@ -201,7 +242,7 @@
     <section class="hero">
       <div class="container">
         <h1>Nowoczesne <span>skiny Minecraft</span><br>z AI</h1>
-        <p>Przeglądaj najlepsze skiny, dodawaj własne i generuj unikalne postaci za pomocą sztucznej inteligencji.</p>
+        <p>Przeglądaj skiny, dodawaj własne i generuj unikalne postaci za pomocą sztucznej inteligencji.</p>
         <div>
           <a href="#skiny" class="btn btn-primary">Przeglądaj skiny</a>
           <a href="#ai" class="btn btn-secondary">Generuj AI</a>
@@ -216,45 +257,67 @@
         
         <div class="skins-grid">
           <div class="skin-card">
-            <div class="skin-preview">🧙</div>
+            <div class="skin-preview"><span class="skin-emoji">🧙</span></div>
             <div class="skin-info">
               <h3>Cyber Mage</h3>
               <p>Fantasy</p>
+              <button class="btn btn-primary btn-sm" onclick="alert('Wkrótce będzie można pobierać skiny!')">Pobierz</button>
             </div>
           </div>
           <div class="skin-card">
-            <div class="skin-preview">🥷</div>
+            <div class="skin-preview"><span class="skin-emoji">🥷</span></div>
             <div class="skin-info">
               <h3>Neon Ninja</h3>
               <p>Cyberpunk</p>
+              <button class="btn btn-primary btn-sm" onclick="alert('Wkrótce będzie można pobierać skiny!')">Pobierz</button>
             </div>
           </div>
           <div class="skin-card">
-            <div class="skin-preview">🤖</div>
+            <div class="skin-preview"><span class="skin-emoji">🤖</span></div>
             <div class="skin-info">
               <h3>Mech Pilot</h3>
               <p>Sci-Fi</p>
+              <button class="btn btn-primary btn-sm" onclick="alert('Wkrótce będzie można pobierać skiny!')">Pobierz</button>
             </div>
           </div>
           <div class="skin-card">
-            <div class="skin-preview">🧝</div>
+            <div class="skin-preview"><span class="skin-emoji">🧝</span></div>
             <div class="skin-info">
               <h3>Forest Elf</h3>
               <p>Fantasy</p>
+              <button class="btn btn-primary btn-sm" onclick="alert('Wkrótce będzie można pobierać skiny!')">Pobierz</button>
             </div>
           </div>
           <div class="skin-card">
-            <div class="skin-preview">👨‍🚀</div>
+            <div class="skin-preview"><span class="skin-emoji">👨‍🚀</span></div>
             <div class="skin-info">
               <h3>Space Explorer</h3>
               <p>Sci-Fi</p>
+              <button class="btn btn-primary btn-sm" onclick="alert('Wkrótce będzie można pobierać skiny!')">Pobierz</button>
             </div>
           </div>
           <div class="skin-card">
-            <div class="skin-preview">🧛</div>
+            <div class="skin-preview"><span class="skin-emoji">🧛</span></div>
             <div class="skin-info">
               <h3>Dark Vampire</h3>
               <p>Horror</p>
+              <button class="btn btn-primary btn-sm" onclick="alert('Wkrótce będzie można pobierać skiny!')">Pobierz</button>
+            </div>
+          </div>
+          <div class="skin-card">
+            <div class="skin-preview"><span class="skin-emoji">🦸</span></div>
+            <div class="skin-info">
+              <h3>Super Hero</h3>
+              <p>Comics</p>
+              <button class="btn btn-primary btn-sm" onclick="alert('Wkrótce będzie można pobierać skiny!')">Pobierz</button>
+            </div>
+          </div>
+          <div class="skin-card">
+            <div class="skin-preview"><span class="skin-emoji">🧟</span></div>
+            <div class="skin-info">
+              <h3>Zombie King</h3>
+              <p>Horror</p>
+              <button class="btn btn-primary btn-sm" onclick="alert('Wkrótce będzie można pobierać skiny!')">Pobierz</button>
             </div>
           </div>
         </div>
@@ -270,22 +333,25 @@
           <div class="feature">
             <div class="feature-icon">✨</div>
             <h3>Tekst → Skin</h3>
-            <p>Wpisz opis, np. „złoty rycerz z czerwonym płaszczem” i otrzymaj gotowy plik PNG.</p>
+            <p>Wpisz opis i otrzymaj gotowy plik PNG do Minecrafta.</p>
           </div>
           <div class="feature">
             <div class="feature-icon">🖼️</div>
             <h3>Podgląd 3D</h3>
-            <p>Zobacz skina z każdej strony zanim go pobierzesz.</p>
+            <p>Zobacz skina z każdej strony przed pobraniem.</p>
           </div>
           <div class="feature">
             <div class="feature-icon">⚡</div>
-            <h3>Szybko i prosto</h3>
-            <p>Generacja w około minutę. Bez rysowania i skomplikowanych programów.</p>
+            <h3>Szybko</h3>
+            <p>Generacja w około minutę. Bez rysowania.</p>
           </div>
         </div>
 
-        <div style="text-align: center; margin-top: 40px;">
-          <a href="#" class="btn btn-primary">Wkrótce dostępne</a>
+        <div class="ai-box">
+          <div class="badge">Wkrótce dostępne</div>
+          <label>Opisz swojego skina</label>
+          <textarea placeholder="np. złoty rycerz z czerwonym płaszczem, niebieskie oczy, hełm z rogami..."></textarea>
+          <button class="btn btn-primary" style="width:100%" onclick="alert('AI Generator będzie dostępny wkrótce!')">Generuj skin</button>
         </div>
       </div>
     </section>
@@ -295,7 +361,7 @@
         <div class="cta">
           <h2>Dodaj swój skin</h2>
           <p>Podziel się swoją twórczością z innymi graczami</p>
-          <a href="#" class="btn btn-primary">Wkrótce – Upload</a>
+          <button class="btn btn-primary" onclick="alert('Upload skinów będzie dostępny wkrótce!')">Dodaj skin</button>
         </div>
       </div>
     </section>
