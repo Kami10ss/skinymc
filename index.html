@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SkinyMC – Nowoczesne skiny Minecraft + AI</title>
-  <meta name="description" content="Nowoczesna strona ze skinami Minecraft. Przeglądaj, dodawaj własne i generuj skiny AI.">
+  <script src="https://cdn.jsdelivr.net/npm/skinview3d@3.0.1/bundles/skinview3d.bundle.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -84,7 +84,7 @@
     }
     .btn-secondary:hover { background: #3f3f46; }
     .btn-sm {
-      padding: 8px 14px;
+      padding: 9px 14px;
       font-size: 0.85rem;
       width: 100%;
       text-align: center;
@@ -104,8 +104,8 @@
 
     .skins-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
     }
     .skin-card {
       background: #18181b;
@@ -119,33 +119,25 @@
       border-color: #22c55e;
     }
     .skin-preview {
-      aspect-ratio: 1;
-      background: #1a1a1e;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px;
+      height: 240px;
+      background: #141418;
+      position: relative;
     }
-    .skin-preview img {
-      max-width: 100%;
-      max-height: 100%;
-      image-rendering: pixelated;
-      border-radius: 6px;
+    .skin-preview canvas {
+      width: 100% !important;
+      height: 100% !important;
     }
     .skin-info {
-      padding: 12px;
+      padding: 14px;
     }
     .skin-info h3 {
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       margin-bottom: 2px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
     .skin-info p {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       color: #71717a;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .features {
@@ -239,7 +231,7 @@
     <section class="hero">
       <div class="container">
         <h1>Nowoczesne <span>skiny Minecraft</span><br>z AI</h1>
-        <p>Przeglądaj skiny, dodawaj własne i generuj unikalne postaci za pomocą sztucznej inteligencji.</p>
+        <p>Przeglądaj skiny, obracaj je w 3D i pobieraj jednym kliknięciem.</p>
         <div>
           <a href="#skiny" class="btn btn-primary">Przeglądaj skiny</a>
           <a href="#ai" class="btn btn-secondary">Generuj AI</a>
@@ -250,82 +242,10 @@
     <section id="skiny">
       <div class="container">
         <h2 class="section-title">Popularne skiny</h2>
-        <p class="section-desc">Prawdziwe skiny – kliknij Pobierz, żeby ściągnąć plik PNG</p>
+        <p class="section-desc">Przeciągnij myszką, żeby obrócić skina • Kliknij Pobierz</p>
         
-        <div class="skins-grid">
-
-          <!-- Skin 1 -->
-          <div class="skin-card">
-            <div class="skin-preview">
-              <img src="https://crafatar.com/renders/body/8667ba71-b85a-4004-af54-457a9734eed7?overlay&scale=6" alt="Steve">
-            </div>
-            <div class="skin-info">
-              <h3>Classic Steve</h3>
-              <p>Default</p>
-              <a href="https://crafatar.com/skins/8667ba71-b85a-4004-af54-457a9734eed7" class="btn btn-primary btn-sm" download="steve.png">Pobierz</a>
-            </div>
-          </div>
-
-          <!-- Skin 2 -->
-          <div class="skin-card">
-            <div class="skin-preview">
-              <img src="https://crafatar.com/renders/body/b876ec32-e396-476b-a115-8438d83c67d4?overlay&scale=6" alt="Alex">
-            </div>
-            <div class="skin-info">
-              <h3>Classic Alex</h3>
-              <p>Default</p>
-              <a href="https://crafatar.com/skins/b876ec32-e396-476b-a115-8438d83c67d4" class="btn btn-primary btn-sm" download="alex.png">Pobierz</a>
-            </div>
-          </div>
-
-          <!-- Skin 3 -->
-          <div class="skin-card">
-            <div class="skin-preview">
-              <img src="https://crafatar.com/renders/body/853c80ef-3c37-49bb-aa55-35016a6b1d1c?overlay&scale=6" alt="Notch">
-            </div>
-            <div class="skin-info">
-              <h3>Notch</h3>
-              <p>Legendary</p>
-              <a href="https://crafatar.com/skins/853c80ef-3c37-49bb-aa55-35016a6b1d1c" class="btn btn-primary btn-sm" download="notch.png">Pobierz</a>
-            </div>
-          </div>
-
-          <!-- Skin 4 -->
-          <div class="skin-card">
-            <div class="skin-preview">
-              <img src="https://crafatar.com/renders/body/1ee5f1c5-6d4f-4b1e-9c3d-8f7a2b1e4c9d?overlay&scale=6" alt="Skin">
-            </div>
-            <div class="skin-info">
-              <h3>Herobrine</h3>
-              <p>Myth</p>
-              <a href="https://crafatar.com/skins/1ee5f1c5-6d4f-4b1e-9c3d-8f7a2b1e4c9d" class="btn btn-primary btn-sm" download="herobrine.png">Pobierz</a>
-            </div>
-          </div>
-
-          <!-- Skin 5 -->
-          <div class="skin-card">
-            <div class="skin-preview">
-              <img src="https://crafatar.com/renders/body/ec561538-f3fd-461d-aff5-086b22154bce?overlay&scale=6" alt="jeb_">
-            </div>
-            <div class="skin-info">
-              <h3>jeb_</h3>
-              <p>Mojang</p>
-              <a href="https://crafatar.com/skins/ec561538-f3fd-461d-aff5-086b22154bce" class="btn btn-primary btn-sm" download="jeb.png">Pobierz</a>
-            </div>
-          </div>
-
-          <!-- Skin 6 -->
-          <div class="skin-card">
-            <div class="skin-preview">
-              <img src="https://crafatar.com/renders/body/f5c8e9d2-4a1b-4c3d-9e8f-7a6b5c4d3e2f?overlay&scale=6" alt="Skin">
-            </div>
-            <div class="skin-info">
-              <h3>Enderman</h3>
-              <p>Mob</p>
-              <a href="https://crafatar.com/skins/f5c8e9d2-4a1b-4c3d-9e8f-7a6b5c4d3e2f" class="btn btn-primary btn-sm" download="enderman.png">Pobierz</a>
-            </div>
-          </div>
-
+        <div class="skins-grid" id="skinsGrid">
+          <!-- Skiny będą generowane przez JavaScript -->
         </div>
       </div>
     </section>
@@ -367,7 +287,7 @@
         <div class="cta">
           <h2>Dodaj swój skin</h2>
           <p>Podziel się swoją twórczością z innymi graczami</p>
-          <button class="btn btn-primary" onclick="alert('Upload skinów będzie dostępny wkrótce!')">Dodaj skin</button>
+          <button class="btn btn-primary" onclick="alert('Upload i edytor skinów dodamy w następnym kroku!')">Dodaj skin</button>
         </div>
       </div>
     </section>
@@ -378,5 +298,87 @@
       <p>© 2026 SkinyMC. Nieoficjalna strona – nie powiązana z Mojang ani Microsoft.</p>
     </div>
   </footer>
+
+  <script>
+    const skins = [
+      {
+        name: "Classic Steve",
+        category: "Default",
+        uuid: "8667ba71-b85a-4004-af54-457a9734eed7",
+        fileName: "steve.png"
+      },
+      {
+        name: "Classic Alex",
+        category: "Default",
+        uuid: "b876ec32-e396-476b-a115-8438d83c67d4",
+        fileName: "alex.png"
+      },
+      {
+        name: "Notch",
+        category: "Legendary",
+        uuid: "069a79f4-44e9-4726-a5be-fca90e38aaf5",
+        fileName: "notch.png"
+      },
+      {
+        name: "jeb_",
+        category: "Mojang",
+        uuid: "853c80ef-3c37-49bb-aa55-35016a6b1d1c",
+        fileName: "jeb.png"
+      },
+      {
+        name: "Dinnerbone",
+        category: "Mojang",
+        uuid: "61699b2e-d327-4a01-9f1e-0ea8c3f06bc6",
+        fileName: "dinnerbone.png"
+      },
+      {
+        name: "Herobrine",
+        category: "Myth",
+        uuid: "f5c8e9d2-4a1b-4c3d-9e8f-7a6b5c4d3e2f",
+        fileName: "herobrine.png"
+      }
+    ];
+
+    const grid = document.getElementById('skinsGrid');
+
+    skins.forEach((skin, index) => {
+      const card = document.createElement('div');
+      card.className = 'skin-card';
+      card.innerHTML = `
+        <div class="skin-preview" id="preview-${index}"></div>
+        <div class="skin-info">
+          <h3>${skin.name}</h3>
+          <p>${skin.category}</p>
+          <a href="https://crafatar.com/skins/${skin.uuid}" 
+             class="btn btn-primary btn-sm" 
+             download="${skin.fileName}">
+            Pobierz
+          </a>
+        </div>
+      `;
+      grid.appendChild(card);
+
+      // Tworzenie obracanego podglądu 3D
+      const container = document.getElementById(`preview-${index}`);
+      const viewer = new skinview3d.SkinViewer({
+        canvas: document.createElement('canvas'),
+        width: 200,
+        height: 240,
+        skin: `https://crafatar.com/skins/${skin.uuid}`
+      });
+      
+      container.appendChild(viewer.canvas);
+      
+      // Auto obracanie + możliwość ręcznego obracania
+      viewer.autoRotate = true;
+      viewer.autoRotateSpeed = 0.6;
+      
+      // Kontrola myszką
+      const control = skinview3d.createOrbitControls(viewer);
+      control.enableRotate = true;
+      control.enableZoom = false;
+      control.enablePan = false;
+    });
+  </script>
 </body>
 </html>
